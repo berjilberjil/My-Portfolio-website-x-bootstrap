@@ -156,15 +156,15 @@
   /**
    * Skills animation
    */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
+  let skillsContent = document.querySelector('.skills-content');
+  if (skillsContent) {
     new Waypoint({
-      element: skilsContent,
+      element: skillsContent,
       offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
+      handler: function (direction) {
+        let progress = document.querySelectorAll('.progress-bar');
         progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
+          el.style.width = el.style.width
         });
       }
     })
